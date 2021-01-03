@@ -10,11 +10,6 @@ app.config['SQLALCHEMY_DATABASE_URI']='sqlite:///data.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATION']=False
 api=Api(app)
 app.secret_key="flask"
-
-
-@app.before_first_request
-def create_tables():
-    db.create_all()
     
 jwt=JWT(app,authenticate,identity) #/auth
 
